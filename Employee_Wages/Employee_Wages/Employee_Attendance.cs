@@ -12,18 +12,14 @@ namespace Employee_Wages
         public static int EmployeeAttendancecheck()
         {
            const int IS_FULL_TIME = 1;
-            const int IS_PART_TIME = 2;
+            const int EMP_RATE_PER_HR = 20;
             int emp_hour = 0;
 
             Random rnd = new Random();
-            int emp_attendance_check = rnd.Next(0,3);
+            int emp_attendance_check = rnd.Next(0,2);
             if (emp_attendance_check == IS_FULL_TIME)
             {
                 emp_hour = 8;
-            }
-            else if (emp_attendance_check == IS_PART_TIME)
-            {
-                emp_hour = 4;
             }
             else 
             {
