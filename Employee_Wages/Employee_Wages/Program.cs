@@ -4,8 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Employee Wages Program Computation");
-            Employee_Attendance.EmployeeAttendancecheck();
+           
+           int emp= Employee_Attendance.EmployeeAttendancecheck();
+            Console.WriteLine(emp);
         }
     }
 }
