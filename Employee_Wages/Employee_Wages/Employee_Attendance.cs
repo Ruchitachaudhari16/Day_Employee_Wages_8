@@ -9,15 +9,16 @@ namespace Employee_Wages
 {
     internal class Employee_Attendance
 
-    { // UC4 Solve using switch case statement
+    { // calcu;lating wages per month
          const int EMP_RATE_PER_HOUR = 20;
         const int IS_PART_TIME = 1;
         const int IS_FULL_TIME = 2;
+        const int NUM_OF_WORKING_DAYS = 20;
+        private static int total_emp_wage;
+
         public static int EmployeeDailyWage()
         {
             int emp_hour;
-            
-          
             Random rnd = new Random();
             int emp_attendance_check = rnd.Next(0, 3);
            
@@ -35,7 +36,7 @@ namespace Employee_Wages
                     break;
             }
                     int emp_wage = emp_hour * EMP_RATE_PER_HOUR;
-                    return emp_wage;
+                    return total_emp_wage=+emp_wage;
             }
         }
     }
