@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 //using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,40 +11,60 @@ namespace Employee_Wages
 {
     internal class Employee
 
-    { //UC8 Ability to computeEmployee Wage for multiple companies
-        public  const int PARTDAYHRS = 1;
-        public const int FULLDAYHRS = 2;
+    { //UC9 Ability to save theTotal Wage for Each Company
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
 
-        public static int computeEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        private string company;
+        private int empRatePerHour;
+        private int noOfWorkingDays;
+        private int maxHoursPerMonth;
+        private int totalEmpWage;
+        public Employee(string company, int empRatePerHour, int noOfWorkingDays, int maxHoursPerMonth)
+        {
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.noOfWorkingDays = noOfWorkingDays;
+            this.maxHoursPerMonth = maxHoursPerMonth;
+
+        }
+
+        public void computeEmpWage()
         {
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
-            while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
+            while (totalEmpHrs <= this.maxHoursPerMonth && totalWorkingDays < this.noOfWorkingDays)
             {
                 totalWorkingDays++;
-                Random random= new Random();
+                Random random = new Random();
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
                 {
-                    case 0:
-                        empHrs = 0;
+                    case IS_PART_TIME:
+                        empHrs = 4;
                         break;
-                    case 1:
+                    case IS_FULL_TIME:
                         empHrs = 8;
                         break;
-                    case 2:
-                        empHrs = 4;
+                    default:
+                        empHrs = 0;
                         break;
 
                 }
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day#" + totalWorkingDays + "Emp Hrs:" + empHrs);
             }
-            int totalEmpWage = totalEmpHrs * empRatePerHour;
+            int totalEmpWage = totalEmpHrs * this.empRatePerHour;
             Console.WriteLine("Total Emp Wage for Company:" + company + "is :" + totalEmpWage);
-            return totalEmpWage;
-        
+        }
 
+        public string tostring()
+        {
+            return "total emp wage for company:" + company + "is:" + this.totalEmpWage;
         }
-        }
+
+
     }
+}
+        
+    
 
