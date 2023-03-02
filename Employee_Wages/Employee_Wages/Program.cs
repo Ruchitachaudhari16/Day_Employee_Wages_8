@@ -8,8 +8,8 @@ namespace Employee_Wages
             static void Main(string[] args)
             {
 
-            int emp = Employee_Attendance.MonthlyWageBasedOnCriteria();
-                Console.WriteLine(emp);
+             Employee.computeEmpWage("Dmart",20,2,10);
+            Employee.computeEmpWage("Reliance", 10, 4, 20);
             }
         }
     }
