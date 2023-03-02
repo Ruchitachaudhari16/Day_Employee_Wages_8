@@ -1,12 +1,16 @@
-﻿namespace Employee_Wages
+﻿using Employee_Wages;
+
+namespace Employee_Wages
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+   
+        internal class Program
         {
-           
-           int emp= Employee_Attendance.EmployeeDailyWage();
-            Console.WriteLine(emp);
+            static void Main(string[] args)
+            {
+
+            int emp = Employee_Attendance.MonthlyWageBasedOnCriteria();
+                Console.WriteLine(emp);
+            }
         }
     }
-}
+
