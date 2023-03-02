@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 //using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,12 @@ namespace Employee_Wages
 {
     internal class Employee_Attendance
 
-    { // calculating wages per month
+    { //UC7 Compute EmployeeWage Using Class Methods
        public  const int EMP_RATE_PER_HOUR = 20;
-        public const int FULLDAYHRS = 1;
-       public  const int PARTDAYHRS = 2;
-       public const int NUM_OF_WORKING_DAYS = 20;
-        public const int MAXWORKINGHRSINMONTH = 100;
+        public const int FULLDAYHRS = 2;
+       public  const int PARTDAYHRS = 1;
+       public const int NUM_OF_WORKING_DAYS = 2;
+        public const int MAXWORKINGHRSINMONTH = 10;
        
 
         public static int EmployeeAttendanceCheck()
